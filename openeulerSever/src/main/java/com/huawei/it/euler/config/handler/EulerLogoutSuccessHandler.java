@@ -4,6 +4,7 @@
 
 package com.huawei.it.euler.config.handler;
 
+import com.alibaba.fastjson.JSONObject;
 import com.huawei.it.euler.common.JsonResponse;
 import com.huawei.it.euler.common.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class EulerLogoutSuccessHandler implements LogoutSuccessHandler {
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,
-                                Authentication authentication) throws IOException, ServletException {
+                                Authentication authentication) throws IOException {
         if (authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }

@@ -4,6 +4,7 @@
 
 package com.huawei.it.euler.config.handler;
 
+import com.alibaba.fastjson.JSONObject;
 import com.huawei.it.euler.common.JsonResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -25,7 +26,7 @@ import java.io.IOException;
 public class EulerAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
-                         AuthenticationException authException) throws IOException, ServletException {
+                         AuthenticationException authException) throws IOException {
         response.setContentType("application/json;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
         try (ServletOutputStream outputStream = response.getOutputStream()) {
